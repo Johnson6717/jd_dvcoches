@@ -1,0 +1,35 @@
+RegisterNetEvent("jd:eliminarcoches")
+AddEventHandler("jd:eliminarcoches", function ()
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 5 minuto todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(190000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 3 minuto todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(60000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 1 minutos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(30000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 30 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(10000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 20 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(5000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 10 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 5 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 4 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 3 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 2 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    TriggerEvent("chatMessage", "^7[^5Anuncio^7] ^7En 1 segundos todos los vehiculos vacios seran remolcados.")
+    Citizen.Wait(1000)
+    for vehicle in EnumerateVehicles() do
+        if (not IsPedAPlayer(GetPedInVehicleSeat(vehicle, -1))) then 
+            SetVehicleHasBeenOwnedByPlayer(vehicle, false) 
+            SetEntityAsMissionEntity(vehicle, false, false) 
+            DeleteVehicle(vehicle)
+            if (DoesEntityExist(vehicle)) then 
+                DeleteVehicle(vehicle) 
+            end
+        end
+    end
+end)
