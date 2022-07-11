@@ -7,3 +7,4 @@ Esta configurado para que los autos se borren en 5 min, obviamente se puede camb
 [Preview]
 
 https://cdn.discordapp.com/attachments/993658688449548378/993685716708098119/unknown_1.png
+https://www.youtube.com/watch?v=DuwlYAdTFfk
